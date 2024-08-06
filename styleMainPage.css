@@ -1,11 +1,21 @@
 .knopka_main {
-    padding: 0.5em 0.5em; /* Поля по вертикали и горизонтали*/
+    padding: 0.5em 0.5em;
     font-size: 20px;
 }
 .knopka_middle{
-    padding: 0.5em 2em; /* Поля по вертикали и горизонтали*/
-    font-size: 14px;
+    padding: 0.5em 2em;
+    font-size: 16px;
+}
+.knopka_perecklyuch{
+    padding: 0.5em 0.5em; /* Поля по вертикали и горизонтали*/
 }
 p{
-    font-size: 16px;
+    font-size: 24px;
+}
+input[type="text"] { width: 100%; }
+#table_poisk,#table_data {
+    width: 100%; /* Ширина таблицы */
+}
+#id_knopka_zakryt{
+  text-align: right;
 }
