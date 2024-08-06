@@ -30,35 +30,36 @@
 <table>
     <tbody>
     <tr>
-        <td><button type="button">
+        <td><button class="knopka_perecklyuch" type="button">
             <img src="strelka_lev.png" alt="Назад" width="20" height="20">
         </button> </td>
-        <td><button type="button">
+        <td><button class="knopka_perecklyuch"  type="button">
             <img src="strelka_prav.png" alt="Вперед" width="20" height="20">
         </button> </td>
-        <td><p>Сотрудники</p></td>
-        <td><button type="button" name="close_page_button">x</button></td>
+        <td><img src="star.jpg" alt="Вперед" width="20" height="20"></td>
+        <td style="width: 100%;"><p>Сотрудники</p></td>
+        <td id="id_knopka_zakryt"><button class="knopka_perecklyuch" id="knopka_zakryt" type="button" name="close_page_button">x</button></td>
     </tr>
     </tbody>
 </table>
 <table>
     <tbody>
     <tr>
-        <td><button type="button" name="create_page_button">Создать</button></td>
+        <td><button class="knopka_middle" type="button" name="create_page_button">Создать</button></td>
     </tr>
     </tbody>
 </table>
-<table>
+<table id="table_poisk">
     <tbody>
     <tr>
         <td><form>
             <input type="text" id="name" placeholder="Иванов Иван Иванович">
         </form></td>
-        <td><button type="button" name="clear_poisk_button">x</button></td>
+        <td style="text-align: right; width: 1%"><button type="button" name="clear_poisk_button">x</button></td>
     </tr>
     </tbody>
 </table>
-<table>
+<table id="table_data">
     <tbody>
     <tr>
         <td>Имя</td>
