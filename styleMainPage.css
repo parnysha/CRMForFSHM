@@ -1,0 +1,11 @@
+.knopka_main {
+    padding: 0.5em 0.5em; /* Поля по вертикали и горизонтали*/
+    font-size: 20px;
+}
+.knopka_middle{
+    padding: 0.5em 2em; /* Поля по вертикали и горизонтали*/
+    font-size: 14px;
+}
+p{
+    font-size: 16px;
+}
