@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="../styles/css/styleMainPage.css">
+</head>
+<body>
+<p><a href="/person/all">Относительная ссылка</a></p>
+<table>
+    <tbody>
+    <tr>
+        <td><button class="knopka_main" type="button" name="main_page_button">Главное</button></td>
+        <td><button class="knopka_main" type="button" name="kadry_page_button">Кадры</button></td>
+        <td><button class="knopka_main" type="button" name="money_page_button">Зарплата</button></td>
+        <td><button class="knopka_main" type="button" name="otchet_page_button">Отчетность, справки</button></td>
+        <td><button class="knopka_main" type="button" name="setting_page_button">Настройки</button></td>
+        <td><button class="knopka_main" type="button" name="admin_page_button">Администрирование</button></td>
+    </tr>
+    </tbody>
+</table>
+<table>
+    <tbody>
+    <tr>
+        <td><button class="knopka_middle" type="button" name="sotrudniki_page_button">Сотрудники</button></td>
+        <td><button class="knopka_middle" type="button" name="m/o_page_button">М/О</button></td>
+        <td><button class="knopka_middle" type="button" name="obuchenie_page_button">Обучение от</button></td>
+    </tr>
+    </tbody>
+</table>
+<table>
+    <tbody>
+    <tr>
+        <td><button class="knopka_perecklyuch" type="button">
+            <img src="../images/strelka_lev.png" alt="Назад" width="20" height="20">
+        </button> </td>
+        <td><button class="knopka_perecklyuch"  type="button">
+            <img src="../images/strelka_prav.png" alt="Вперед" width="20" height="20">
+        </button> </td>
+        <td><img src="../images/star.jpg" alt="*" width="20" height="20"></td>
+        <td style="width: 100%;"><p>Сотрудники</p></td>
+        <td id="id_knopka_zakryt"><button class="knopka_perecklyuch" id="knopka_zakryt" type="button" name="close_page_button">x</button></td>
+    </tr>
+    </tbody>
+</table>
+<table>
+    <tbody>
+    <tr>
+        <td><button class="knopka_middle" type="button" name="create_page_button">Создать</button></td>
+    </tr>
+    </tbody>
+</table>
+<table id="table_poisk">
+    <tbody>
+    <tr>
+        <td><form>
+            <input type="text" id="name" placeholder="Иванов Иван Иванович">
+        </form></td>
+        <td style="text-align: right; width: 1%"><button type="button" name="clear_poisk_button">x</button></td>
+    </tr>
+    </tbody>
+</table>
+<table id="table_data">
+    <tbody>
+    <tr>
+        <td>Имя</td>
+        <td>Подразделение</td>
+        <td>Должность</td>
+        <td>Дата приема</td>
+        <td>Дата увольнения</td>
+    </tr>
+    <tr>
+        <td><span th:text="${persons.get(0).getName()}"></span></td>
+        <td><span th:text="${persons.get(0).getSubdivision()}"></span></td>
+        <td><span th:text="${persons.get(0).getPost()}"></span></td>
+        <td><span th:text="${persons.get(0).getDateFormatAdd()}"></span></td>
+        <td><span th:text="${persons.get(0).getDateFormatDis()}"></span></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

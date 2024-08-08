@@ -4,11 +4,12 @@ import lombok.RequiredArgsConstructor;
 import org.example.crmforfshm.dto.Person;
 import org.example.crmforfshm.service.PersonService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequiredArgsConstructor
 @RequestMapping("/person")
 public class personController {
@@ -19,11 +20,11 @@ public class personController {
         return personService.getPerson(id);
     }
 
-    @GetMapping("/all")
-    @ResponseBody
-    public List<Person> getAllPerson() {
+    @GetMapping ("/all")
+    public String getAllPerson(Model model) {
         System.out.println(personService.getPersons());
-        return personService.getPersons();
+        model.addAttribute("persons", personService.getPersons());
+        return "MainPage";
     }
 
     @GetMapping("/update")
@@ -40,4 +41,5 @@ public class personController {
     public Person deleteBook(@RequestBody Person person){
         return personService.deletePerson(person);
     }
+
 }
