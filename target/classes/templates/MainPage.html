@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Главная страница</title>
-    <link rel="stylesheet" href="styleMainPage.css">
+    <link rel="stylesheet" href="../styles/css/styleMainPage.css">
 </head>
 <body>
+<p><a href="/person/all">Относительная ссылка</a></p>
 <table>
     <tbody>
     <tr>
@@ -31,12 +32,12 @@
     <tbody>
     <tr>
         <td><button class="knopka_perecklyuch" type="button">
-            <img src="strelka_lev.png" alt="Назад" width="20" height="20">
+            <img src="../images/strelka_lev.png" alt="Назад" width="20" height="20">
         </button> </td>
         <td><button class="knopka_perecklyuch"  type="button">
-            <img src="strelka_prav.png" alt="Вперед" width="20" height="20">
+            <img src="../images/strelka_prav.png" alt="Вперед" width="20" height="20">
         </button> </td>
-        <td><img src="star.jpg" alt="Вперед" width="20" height="20"></td>
+        <td><img src="../images/star.jpg" alt="*" width="20" height="20"></td>
         <td style="width: 100%;"><p>Сотрудники</p></td>
         <td id="id_knopka_zakryt"><button class="knopka_perecklyuch" id="knopka_zakryt" type="button" name="close_page_button">x</button></td>
     </tr>
@@ -68,12 +69,12 @@
         <td>Дата приема</td>
         <td>Дата увольнения</td>
     </tr>
-    <tr>
-        <td>Афанасьев Сергей Анатольевич</td>
-        <td>Цех основного производства</td>
-        <td>Вальцовщик холодного металла</td>
-        <td>22.03.2023</td>
-        <td>Пока пустая</td>
+    <tr th:each="person:${persons}">
+        <td th:utext="${person.getName()}"></td>
+        <td th:utext="${person.getSubdivision()}"></td>
+        <td th:utext="${person.getPost()}"></td>
+        <td th:utext="${person.getDateFormatAdd()}"></td>
+        <td th:utext="${person.getDateFormatDis()}"></td>
     </tr>
     </tbody>
 </table>
