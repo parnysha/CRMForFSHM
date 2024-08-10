@@ -69,12 +69,12 @@
         <td>Дата приема</td>
         <td>Дата увольнения</td>
     </tr>
-    <tr>
-        <td><span th:text="${persons.get(0).getName()}"></span></td>
-        <td><span th:text="${persons.get(0).getSubdivision()}"></span></td>
-        <td><span th:text="${persons.get(0).getPost()}"></span></td>
-        <td><span th:text="${persons.get(0).getDateFormatAdd()}"></span></td>
-        <td><span th:text="${persons.get(0).getDateFormatDis()}"></span></td>
+    <tr th:each="person:${persons}">
+        <td th:utext="${person.getName()}"></td>
+        <td th:utext="${person.getSubdivision()}"></td>
+        <td th:utext="${person.getPost()}"></td>
+        <td th:utext="${person.getDateFormatAdd()}"></td>
+        <td th:utext="${person.getDateFormatDis()}"></td>
     </tr>
     </tbody>
 </table>
