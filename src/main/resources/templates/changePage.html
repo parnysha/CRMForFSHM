@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление сотрудника</title>
+</head>
+<body>
+<button class="knopka_perecklyuch" type="button">
+    <img src="../images/strelka_lev.png" alt="Назад" width="20" height="20" onclick="location.href='/person/main';">
+</button>
+<table>
+    <tbody>
+    <form action="#" th:action="@{'/person/change/{id}'(id=${person.getId()})}" th:object="${person}" th:method="post">
+        <tr>
+            <td>Полное имя: </td>
+            <td th:utext="${person.getName()}"></td>
+            <td><input type="text" th:field="*{name}" th:placeholder="${person.getName()}"/></td>>
+        </tr>
+        <tr>
+            <td>Группа сотрудников: </td>
+            <td th:utext="${person.getGroupPerson()}"></td>
+            <td><input type="text" th:field="*{groupPerson}" th:placeholder="${person.getGroupPerson()}"/></td>
+        </tr>
+        <tr>
+            <td>Дата рождения: </td>
+            <td th:utext="${person.getDateBirth()}"></td>
+            <td><input type="text" th:field="*{dateBirth}" th:placeholder="${person.getDateBirth()}"/></td>
+        </tr>
+        <tr>
+            <td>Пол: </td>
+            <td th:utext="${person.getSex()}"></td>
+            <td><input type="text" th:field="*{sex}" th:placeholder="${person.getSex()}"/></td>
+        </tr>
+        <tr>
+            <td>СНИЛС: </td>
+            <td th:utext="${person.getSnils()}"></td>
+            <td><input type="text" th:field="*{snils}" th:placeholder="${person.getSnils()}"/></td>
+        </tr>
+        <tr>
+            <td>Должность: </td>
+            <td th:utext="${person.getPost()}"></td>
+            <td><input type="text" th:field="*{post}" th:placeholder="${person.getPost()}"/></td>
+        </tr>
+        <tr>
+            <td>Подразделение: </td>
+            <td th:utext="${person.getSubdivision()}"></td>
+            <td><input type="text" th:field="*{subdivision}" th:placeholder="${person.getSubdivision()}"/></td>
+        </tr>
+        <tr>
+            <td>Дата приема: </td>
+            <td th:utext="${person.getDateFormatAdd()}"></td>
+            <td><input type="text" th:field="*{dateFormatAdd}" th:placeholder="${person.getDateFormatAdd()}"/></td>
+        </tr>
+        <tr>
+            <td>Дата увольнения: </td>
+            <td th:utext="${person.getDateFormatDis()}"></td>
+            <td><input type="text" th:field="*{dateFormatDis}" th:placeholder="${person.getDateFormatDis()}"/></td>
+        </tr>
+        <tr>
+            <td><button type="submit">Сохранить изменения</button></td>
+        </tr>
+    </form>
+    </tbody>
+</table>
+</body>
+</html>

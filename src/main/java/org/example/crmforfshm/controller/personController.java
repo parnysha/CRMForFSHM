@@ -19,8 +19,26 @@ public class personController {
     private final CheckStateImpl checkState;
 
     @GetMapping("/info/{id}")
-    public Person getPersonInfo(@PathVariable long id) {
-        return personService.getPerson(id);
+    public String getPersonInfo(@PathVariable long id, Model model) {
+        model.addAttribute("person", personService.getPerson(id));
+        System.out.println(personService.getPerson(id));
+        return "infoPage";
+    }
+    @GetMapping("/change/{id}")
+    public String changePersonInfo(@PathVariable long id, Model model) {
+        model.addAttribute("person", personService.getPerson(id));
+        System.out.println(personService.getPerson(id));
+        return "changePage";
+    }
+    @PostMapping("/change/{id}")
+    public String changePersonInfo(@ModelAttribute Person person){
+        if(!checkState.checkCorrect(person)){
+            log.info("Сотрудник имеет некорректные поля");
+            return "changePage";
+        }
+        log.info("Изменен сотрудник: {}", person);
+        personService.updatePerson(person);
+        return "redirect:/person/main";
     }
 
     @GetMapping ("/main")//главная страница
@@ -29,14 +47,11 @@ public class personController {
         return "MainPage";
     }
 
-    @GetMapping("/update")
-    public Person updatePerson(@RequestParam Person person) {
-        return personService.updatePerson(person);
-    }
-
-    @DeleteMapping("/delete/single")
-    public Person deleteBook(@RequestBody Person person){
-        return personService.deletePerson(person);
+    @PostMapping("/delete/{id}")
+    public String deletePerson(@PathVariable long id){
+        log.info("Удален сотрудник: {}", personService.getPerson(id));
+        personService.deletePerson(id);
+        return "redirect:/person/main";
     }
 
     @GetMapping("/create")
