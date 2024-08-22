@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="57f2957a-9a02-4f98-8034-2149d1f6280a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/crmforfshm/controller/personController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/crmforfshm/controller/personController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/crmforfshm/dto/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/crmforfshm/dto/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/crmforfshm/service/PersonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/crmforfshm/service/PersonService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/crmforfshm/service/PersonServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/crmforfshm/service/PersonServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/crmforfshm/CrmForFshmApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/crmforfshm/configuraion/MVCConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/crmforfshm/controller/personController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/crmforfshm/dto/Person.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/crmforfshm/repository/PersonRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/crmforfshm/service/CheckCorrectFields.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/crmforfshm/service/CheckDate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/crmforfshm/service/CheckState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/crmforfshm/service/CheckStateImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/crmforfshm/service/PersonService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/crmforfshm/service/PersonServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/star.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/strelka_lev.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/strelka_prav.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/styleMainPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/CreatePage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/MainPage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/changePage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/infoPage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/crmforfshm/CrmForFshmApplicationTests.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2l2D68qsV7CDgJsuMnReKOlRNCp" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "dev",
+    "kotlin-language-version-configured": "true",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="57f2957a-9a02-4f98-8034-2149d1f6280a" name="Changes" comment="" />
+      <created>1724369101610</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1724369101610</updated>
+      <workItem from="1724369103755" duration="34000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

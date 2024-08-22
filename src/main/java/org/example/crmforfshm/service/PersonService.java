@@ -5,9 +5,9 @@ import org.example.crmforfshm.dto.Person;
 import java.util.List;
 
 public interface PersonService {
-    Person addPerson(Person person);
-    Person updatePerson(Person person);
-    void deletePerson(long id);
+    void addPerson(Person person);
+    void updatePerson(Person person);
+    void deletePerson(String id);
     List<Person> getPersons();
-    Person getPerson(long id);
+    Person getPerson(String id);
 }

@@ -1,42 +1,37 @@
 package org.example.crmforfshm.dto;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "Person")
 public class Person {
     @Id
-    @GeneratedValue
-    private long id;
+    @Column(name = "id")
+    private String id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "FIO")
     private String name;
-    @Column(nullable = false)
+    @Column(nullable = false, name = "groupPerson")
     private String groupPerson;
-    @Column(nullable = false)
+    @Column(nullable = false, name = "sex")
     private String sex;
-    @Column(nullable = false)
+    @Column(nullable = false, name = "dateBirth")
     private String dateBirth;
-    @Column(nullable = false)
+    @Column(nullable = false, name = "snils")
     private String snils;
-    @Column(nullable = false)
+    @Column(nullable = false, name = "subdivision")
     private String subdivision;
-    @Column(nullable = false)
+    @Column(nullable = false, name = "post")
     private String post;
-    @Column(nullable = false)
+    @Column(nullable = false, name = "dateFormatAdd")
     private String dateFormatAdd;
-    @Column()
+    @Column(name = "dateFormatDis")
     private String dateFormatDis;
 }

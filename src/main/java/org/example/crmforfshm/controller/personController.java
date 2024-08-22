@@ -19,13 +19,13 @@ public class personController {
     private final CheckStateImpl checkState;
 
     @GetMapping("/info/{id}")
-    public String getPersonInfo(@PathVariable long id, Model model) {
+    public String getPersonInfo(@PathVariable String id, Model model) {
         model.addAttribute("person", personService.getPerson(id));
         System.out.println(personService.getPerson(id));
         return "infoPage";
     }
     @GetMapping("/change/{id}")
-    public String changePersonInfo(@PathVariable long id, Model model) {
+    public String changePersonInfo(@PathVariable String id, Model model) {
         model.addAttribute("person", personService.getPerson(id));
         System.out.println(personService.getPerson(id));
         return "changePage";
@@ -48,7 +48,7 @@ public class personController {
     }
 
     @PostMapping("/delete/{id}")
-    public String deletePerson(@PathVariable long id){
+    public String deletePerson(@PathVariable String id){
         log.info("Удален сотрудник: {}", personService.getPerson(id));
         personService.deletePerson(id);
         return "redirect:/person/main";
