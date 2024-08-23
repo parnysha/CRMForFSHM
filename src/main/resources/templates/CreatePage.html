@@ -5,18 +5,9 @@
     <title>Добавление сотрудника</title>
 </head>
 <body>
-<table>
-    <tbody>
-    <tr>
-        <td><button class="knopka_perecklyuch" type="button">
-            <img src="../images/strelka_lev.png" alt="Назад" width="20" height="20" onclick="location.href='/person/main';">
-        </button> </td>
-        <td><button class="knopka_perecklyuch"  type="button">
-            <img src="../images/strelka_prav.png" alt="Вперед" width="20" height="20">
-        </button> </td>
-    </tr>
-    </tbody>
-</table>
+<button class="knopka_perecklyuch" type="button">
+    <img src="../images/strelka_lev.png" alt="Назад" width="20" height="20" onclick="location.href='/person/main';">
+</button>
 <table>
     <tbody>
         <form action="#" th:action="@{/person/create}" th:object="${person}" method="post">

@@ -6,6 +6,7 @@ import org.example.crmforfshm.repository.PersonRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Service
 @RequiredArgsConstructor
@@ -27,10 +28,9 @@ public class PersonServiceImpl implements PersonService{
     }
 
     @Override
-    public Person deletePerson(Person person) {
-        final Person personOpt = personRepository.findByName(person.getName());
-        personRepository.delete(personOpt);
-        return personOpt;
+    public void deletePerson(long id) {
+        final Person person = personRepository.findById(id);
+        personRepository.delete(person);
     }
 
     @Override
@@ -39,7 +39,7 @@ public class PersonServiceImpl implements PersonService{
     }
 
     @Override
-    public Person getPerson(Long id){
-        return personRepository.findByName(String.valueOf(id));
+    public Person getPerson(long id){
+        return personRepository.findById(id);
     }
 }
