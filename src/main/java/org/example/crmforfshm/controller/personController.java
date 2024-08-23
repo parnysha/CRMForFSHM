@@ -21,13 +21,11 @@ public class personController {
     @GetMapping("/info/{id}")
     public String getPersonInfo(@PathVariable long id, Model model) {
         model.addAttribute("person", personService.getPerson(id));
-        System.out.println(personService.getPerson(id));
         return "infoPage";
     }
     @GetMapping("/change/{id}")
     public String changePersonInfo(@PathVariable long id, Model model) {
         model.addAttribute("person", personService.getPerson(id));
-        System.out.println(personService.getPerson(id));
         return "changePage";
     }
     @PostMapping("/change/{id}")
