@@ -21,10 +21,37 @@ public class PersonServiceImpl implements PersonService{
     }
 
     @Override
-    public Person updatePerson(Person person) {
-        final Person updateBook = personRepository.save(person);
-        personRepository.flush();
-        return updateBook;
+    public Person updatePerson(Person person,long id) {
+        final Person updatePerson = personRepository.findById(id);
+        //fix if
+        if(person.getName()!=updatePerson.getName()) {
+            updatePerson.setName(person.getName());
+        }
+        if (person.getGroupPerson()!=updatePerson.getGroupPerson()) {
+            updatePerson.setGroupPerson(person.getGroupPerson());
+        }
+        if(person.getSex()!=updatePerson.getSex()){
+            updatePerson.setSex(person.getSex());
+        }
+        if(person.getDateBirth()!=updatePerson.getDateBirth()) {
+            updatePerson.setDateBirth(person.getDateBirth());
+        }
+        if(person.getSnils()!=updatePerson.getSnils()) {
+            updatePerson.setSnils(person.getSnils());
+        }
+        if(person.getSubdivision()!=updatePerson.getSubdivision()) {
+            updatePerson.setSubdivision(person.getSubdivision());
+        }
+        if(person.getPost()!=updatePerson.getPost()) {
+            updatePerson.setPost(person.getPost());
+        }
+        if (person.getDateFormatAdd()!=updatePerson.getDateFormatAdd()) {
+            updatePerson.setDateFormatAdd(person.getDateFormatAdd());
+        }
+        if(person.getDateFormatDis()!=updatePerson.getDateFormatDis()) {
+            updatePerson.setDateFormatDis(person.getDateFormatDis());
+        }
+        return  personRepository.saveAndFlush(updatePerson);
     }
 
     @Override

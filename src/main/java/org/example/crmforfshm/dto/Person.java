@@ -37,6 +37,6 @@ public class Person {
     private String post;
     @Column(nullable = false)
     private String dateFormatAdd;
-    @Column()
+    @Column
     private String dateFormatDis;
 }

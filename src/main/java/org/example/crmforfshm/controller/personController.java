@@ -6,66 +6,42 @@ import org.example.crmforfshm.service.CheckStateImpl;
 import org.example.crmforfshm.service.PersonService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RestController
 @RequiredArgsConstructor
 @RequestMapping("/person")
 public class personController {
     private static final Logger log = LoggerFactory.getLogger(personController.class);
     private final PersonService personService;
-    private final CheckStateImpl checkState;
+    //private final CheckStateImpl checkState;
 
-    @GetMapping("/info/{id}")
-    public String getPersonInfo(@PathVariable long id, Model model) {
-        model.addAttribute("person", personService.getPerson(id));
-        return "infoPage";
-    }
-    @GetMapping("/change/{id}")
-    public String changePersonInfo(@PathVariable long id, Model model) {
-        model.addAttribute("person", personService.getPerson(id));
-        return "changePage";
-    }
-    @PostMapping("/change/{id}")
-    public String changePersonInfo(@ModelAttribute Person person){
-        if(!checkState.checkCorrect(person)){
-            log.info("Сотрудник имеет некорректные поля");
-            return "changePage";
-        }
-        log.info("Изменен сотрудник: {}", person);
-        personService.updatePerson(person);
-        return "redirect:/person/main";
-    }
 
-    @GetMapping ("/main")//главная страница
-    public String getAllPerson(Model model) {
-        model.addAttribute("persons", personService.getPersons());
-        return "MainPage";
-    }
-
-    @PostMapping("/delete/{id}")
-    public String deletePerson(@PathVariable long id){
-        log.info("Удален сотрудник: {}", personService.getPerson(id));
-        personService.deletePerson(id);
-        return "redirect:/person/main";
-    }
-
-    @GetMapping("/create")
-    public String createPerson(Model model) {
-        model.addAttribute("person",new Person());
-        return "CreatePage";
-    }
-
-    @PostMapping("/create")
-    public String addPerson(@ModelAttribute Person person){
-        if(!checkState.checkCorrect(person)){
+    @PostMapping
+    public Person addPerson(@RequestBody Person person){
+        /*if(!checkState.checkCorrect(person)){
             log.info("Сотрудник имеет некорректные поля");
             return "CreatePage";
-        }
+        }*/         //СДЕЛАТЬ В ЭКСЕПШЕНЕ
+        System.out.println(person);
         log.info("Добавлен сотрудник: {}", person);
-        personService.addPerson(person);
-        return "redirect:/person/main";
+        return personService.addPerson(person);
+    }
+
+    @PatchMapping("/{id}") //подумать над id
+    public Person changePersonInfo(@PathVariable long id,@RequestBody Person person){
+        /*if(!checkState.checkCorrect(person)){
+            log.info("Сотрудник имеет некорректные поля");
+            return "changePage";
+        }*/         //сделать в эксепшене
+        log.info("Изменен сотрудник: {}", person);
+        return personService.updatePerson(person,id);
+    }
+    //НА ЭТОМ ОСТАНОВИЛСЯ
+    @DeleteMapping("/{id}")
+    public Boolean deletePerson(@PathVariable long id){
+        log.info("Удален сотрудник: {}", personService.getPerson(id));
+        personService.deletePerson(id);
+        return true;
     }
 }
