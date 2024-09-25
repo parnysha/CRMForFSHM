@@ -1,0 +1,62 @@
+package org.example.crmforfshm.service;
+
+import lombok.RequiredArgsConstructor;
+import org.example.crmforfshm.dto.Employee;
+import org.example.crmforfshm.repository.EmployeesRepository;
+import org.example.crmforfshm.service.validation.CheckCorrect;
+import org.example.crmforfshm.service.validation.CheckCorrectEmployeeImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class EmployeesServiceImpl implements EmployeesService {
+    private final EmployeesRepository employeesRepository;
+    private final CheckCorrect<Employee> employeesService;
+
+    @Autowired
+    EmployeesServiceImpl(EmployeesRepository employeesRepository,@Qualifier("checkCorrectEmployeeImpl") CheckCorrect<Employee> employeesService){
+        this.employeesRepository=employeesRepository;
+        this.employeesService=employeesService;
+    }
+
+    @Override
+    public Employee addPerson(Employee employee) {
+        if (!employeesService.check(employee)){
+            //выдать эксепшен что пользователь с некорректными полями
+        }
+        if(employeesRepository.findBySnils(employee.getSnils())!=null){
+            //выдать эксепшен что такой пользователь существует
+        }
+        return employeesRepository.saveAndFlush(employee);
+    }
+
+    @Override
+    public Employee updatePerson(String snils,Employee employee) {
+        if (!employeesService.check(employee)){
+            //выдать эксепшен что пользователь с некорректными полями
+        }
+        final Employee updateEmployee = employeesRepository.findBySnils(snils);
+        if(!employee.getSnils().equals(updateEmployee.getSnils())){
+            if(employeesRepository.findBySnils(employee.getSnils())!=null){
+                //эксепшен что такой снилс уже используется
+            }
+            employeesRepository.delete(updateEmployee);
+        }
+        return  employeesRepository.saveAndFlush(employee);
+    }
+
+    @Override
+    public Employee deletePerson(String snils) {
+        final Employee employee = employeesRepository.findBySnils(snils);
+        employeesRepository.delete(employee);
+        return employee;
+    }
+
+    @Override
+    public Employee getPerson(String snils){
+        return employeesRepository.findBySnils(snils);
+    }
+}
