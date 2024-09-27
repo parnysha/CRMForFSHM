@@ -25,10 +25,10 @@ public class EmployeesServiceImpl implements EmployeesService {
     @Override
     public Employee addPerson(Employee employee) {
         if (!employeesService.check(employee)){
-            //выдать эксепшен что пользователь с некорректными полями
+            throw new IllegalArgumentException("Указаны некорректные поля");
         }
         if(employeesRepository.findBySnils(employee.getSnils())!=null){
-            //выдать эксепшен что такой пользователь существует
+            throw new IllegalArgumentException("Пользователь с таким снилсом уже существует");
         }
         return employeesRepository.saveAndFlush(employee);
     }
@@ -36,12 +36,12 @@ public class EmployeesServiceImpl implements EmployeesService {
     @Override
     public Employee updatePerson(String snils,Employee employee) {
         if (!employeesService.check(employee)){
-            //выдать эксепшен что пользователь с некорректными полями
+            throw new IllegalArgumentException("Указаны некорректные поля");
         }
         final Employee updateEmployee = employeesRepository.findBySnils(snils);
         if(!employee.getSnils().equals(updateEmployee.getSnils())){
             if(employeesRepository.findBySnils(employee.getSnils())!=null){
-                //эксепшен что такой снилс уже используется
+                throw new IllegalArgumentException("Пользователь с таким снилсом уже существует");
             }
             employeesRepository.delete(updateEmployee);
         }
