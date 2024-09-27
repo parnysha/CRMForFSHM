@@ -2,7 +2,7 @@ package org.example.crmforfshm.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.example.crmforfshm.dto.Employee;
-import org.example.crmforfshm.service.EmployeesService;
+import org.example.crmforfshm.service.employeeInfo.EmployeesService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/person")
-public class EmployeesController {
-    private static final Logger log = LoggerFactory.getLogger(EmployeesController.class);
+public class EmployeeController {
+    private static final Logger log = LoggerFactory.getLogger(EmployeeController.class);
     private final EmployeesService employeesService;
 
 

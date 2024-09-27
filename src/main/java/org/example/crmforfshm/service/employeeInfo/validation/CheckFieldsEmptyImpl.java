@@ -1,4 +1,4 @@
-package org.example.crmforfshm.service.validation;
+package org.example.crmforfshm.service.employeeInfo.validation;
 
 import lombok.SneakyThrows;
 import org.example.crmforfshm.dto.Employee;

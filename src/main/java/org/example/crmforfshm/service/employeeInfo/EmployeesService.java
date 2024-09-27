@@ -1,8 +1,6 @@
-package org.example.crmforfshm.service;
+package org.example.crmforfshm.service.employeeInfo;
 
 import org.example.crmforfshm.dto.Employee;
-
-import java.util.List;
 
 public interface EmployeesService {
     Employee addPerson(Employee employee);

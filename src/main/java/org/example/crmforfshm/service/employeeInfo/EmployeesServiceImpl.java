@@ -1,15 +1,11 @@
-package org.example.crmforfshm.service;
+package org.example.crmforfshm.service.employeeInfo;
 
-import lombok.RequiredArgsConstructor;
 import org.example.crmforfshm.dto.Employee;
 import org.example.crmforfshm.repository.EmployeesRepository;
-import org.example.crmforfshm.service.validation.CheckCorrect;
-import org.example.crmforfshm.service.validation.CheckCorrectEmployeeImpl;
+import org.example.crmforfshm.service.employeeInfo.validation.CheckCorrect;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class EmployeesServiceImpl implements EmployeesService {
