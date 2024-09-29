@@ -11,13 +11,11 @@ import org.springframework.stereotype.Service;
 public class EmployeesServiceImpl implements EmployeesService {
     private final EmployeesRepository employeesRepository;
     private final CheckCorrect<Employee> employeesService;
-
     @Autowired
     EmployeesServiceImpl(EmployeesRepository employeesRepository,@Qualifier("checkCorrectEmployeeImpl") CheckCorrect<Employee> employeesService){
         this.employeesRepository=employeesRepository;
         this.employeesService=employeesService;
     }
-
     @Override
     public Employee addPerson(Employee employee) {
         if (!employeesService.check(employee)){
@@ -28,7 +26,6 @@ public class EmployeesServiceImpl implements EmployeesService {
         }
         return employeesRepository.saveAndFlush(employee);
     }
-
     @Override
     public Employee updatePerson(String snils,Employee employee) {
         if (!employeesService.check(employee)){
@@ -43,14 +40,12 @@ public class EmployeesServiceImpl implements EmployeesService {
         }
         return  employeesRepository.saveAndFlush(employee);
     }
-
     @Override
     public Employee deletePerson(String snils) {
         final Employee employee = employeesRepository.findBySnils(snils);
         employeesRepository.delete(employee);
         return employee;
     }
-
     @Override
     public Employee getPerson(String snils){
         return employeesRepository.findBySnils(snils);
